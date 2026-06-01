@@ -1,0 +1,75 @@
+[gd_scene format=3 uid="uid://bgtbif5swp87q"]
+
+[ext_resource type="FontFile" uid="uid://dyr6wuvktby3v" path="res://graphics/fonts/Nintendo-DS-BIOS.ttf" id="1_6ic67"]
+[ext_resource type="Script" uid="uid://cj4vhewcib4qr" path="res://scenes/core_logic.gd" id="1_opqod"]
+[ext_resource type="Resource" uid="uid://dwgx45p88tlp3" path="res://global_game_data.tres" id="2_0i5j1"]
+[ext_resource type="Script" uid="uid://d3oo3dftc4ww7" path="res://scenes/gui_manager.gd" id="2_iminf"]
+
+[node name="BaseGame" type="Node2D" unique_id=1155909837]
+script = ExtResource("1_opqod")
+data = ExtResource("2_0i5j1")
+
+[node name="GameGUI" type="Control" parent="." unique_id=914802850]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("2_iminf")
+data = ExtResource("2_0i5j1")
+
+[node name="BaseGUI" type="CanvasLayer" parent="GameGUI" unique_id=395032163]
+
+[node name="BG" type="ColorRect" parent="GameGUI/BaseGUI" unique_id=1727822423]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="BuildText" type="Label" parent="GameGUI/BaseGUI" unique_id=1835108006]
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_6ic67")
+text = "Pre-Alpha"
+
+[node name="CoinAmountText" type="Label" parent="GameGUI/BaseGUI" unique_id=1082733061]
+offset_left = 50.0
+offset_top = 75.0
+offset_right = 131.0
+offset_bottom = 99.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_6ic67")
+theme_override_font_sizes/font_size = 32
+text = "Coins -> 0"
+
+[node name="GemAmountText" type="Label" parent="GameGUI/BaseGUI" unique_id=359243477]
+offset_left = 50.0
+offset_top = 100.0
+offset_right = 244.0
+offset_bottom = 124.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_6ic67")
+theme_override_font_sizes/font_size = 32
+text = "Gems -> 0"
+
+[node name="GenerateCoinsButton" type="Button" parent="GameGUI/BaseGUI" unique_id=1719672307]
+offset_left = 50.0
+offset_top = 150.0
+offset_right = 260.0
+offset_bottom = 218.0
+theme_override_fonts/font = ExtResource("1_6ic67")
+theme_override_font_sizes/font_size = 80
+text = "+Coins"
+
+[node name="GenerateGemsButton" type="Button" parent="GameGUI/BaseGUI" unique_id=1540458753]
+offset_left = 50.0
+offset_top = 250.0
+offset_right = 260.0
+offset_bottom = 318.0
+theme_override_fonts/font = ExtResource("1_6ic67")
+theme_override_font_sizes/font_size = 80
+text = "+Gems"
+
+[connection signal="pressed" from="GameGUI/BaseGUI/GenerateCoinsButton" to="." method="_on_generate_coins_button_pressed"]
+[connection signal="pressed" from="GameGUI/BaseGUI/GenerateGemsButton" to="." method="_on_generate_gems_button_pressed"]
