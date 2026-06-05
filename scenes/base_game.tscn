@@ -4,6 +4,9 @@
 [ext_resource type="Script" uid="uid://cj4vhewcib4qr" path="res://scripts/core_logic.gd" id="1_opqod"]
 [ext_resource type="Resource" uid="uid://dwgx45p88tlp3" path="res://global_game_data.tres" id="2_0i5j1"]
 [ext_resource type="Script" uid="uid://d3oo3dftc4ww7" path="res://scripts/gui_manager.gd" id="2_iminf"]
+[ext_resource type="PackedScene" uid="uid://7wwkl7716y0h" path="res://scenes/game_shop.tscn" id="5_5hrvv"]
+[ext_resource type="AudioStream" uid="uid://da5m5w0msnnld" path="res://audio/driken5482-retro-coin-4-236671.mp3" id="5_vn611"]
+[ext_resource type="AudioStream" uid="uid://bw6pt1fcxj1qh" path="res://audio/mixkit-game-ball-tap-2073.wav" id="6_5hrvv"]
 
 [node name="BaseGame" type="Node2D" unique_id=1155909837 node_paths=PackedStringArray("mana_timer")]
 script = ExtResource("1_opqod")
@@ -42,7 +45,17 @@ offset_bottom = 99.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("1_6ic67")
 theme_override_font_sizes/font_size = 32
-text = "Coins -> 0"
+text = "Coins ->"
+
+[node name="CoinsPerSecondText" type="Label" parent="GameGUI/BaseGUI" unique_id=336912223]
+offset_left = 50.0
+offset_top = 400.0
+offset_right = 131.0
+offset_bottom = 424.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_6ic67")
+theme_override_font_sizes/font_size = 32
+text = "Coins Per Second -> "
 
 [node name="GemAmountText" type="Label" parent="GameGUI/BaseGUI" unique_id=359243477]
 offset_left = 50.0
@@ -52,7 +65,17 @@ offset_bottom = 124.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("1_6ic67")
 theme_override_font_sizes/font_size = 32
-text = "Gems -> 0"
+text = "Gems ->"
+
+[node name="GemsPerSecondText" type="Label" parent="GameGUI/BaseGUI" unique_id=1639797981]
+offset_left = 50.0
+offset_top = 430.0
+offset_right = 248.0
+offset_bottom = 454.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_6ic67")
+theme_override_font_sizes/font_size = 32
+text = "Gems Per Second -> "
 
 [node name="ManaAmountText" type="Label" parent="GameGUI/BaseGUI" unique_id=2026991594]
 anchors_preset = 2
@@ -86,12 +109,30 @@ theme_override_fonts/font = ExtResource("1_6ic67")
 theme_override_font_sizes/font_size = 80
 text = "+Gems"
 
+[node name="GameShop" parent="GameGUI" unique_id=1952746648 instance=ExtResource("5_5hrvv")]
+layout_mode = 0
+
 [node name="GameTimers" type="Node2D" parent="." unique_id=1528351478]
 
 [node name="ManaGenerationTimer" type="Timer" parent="GameTimers" unique_id=675832403]
 wait_time = 0.25
 autostart = true
 
+[node name="BaseResourceTickSpeed" type="Timer" parent="GameTimers" unique_id=934746330]
+wait_time = 0.25
+autostart = true
+
+[node name="GameAudio" type="Node" parent="." unique_id=1500455451]
+
+[node name="CoinButtonSFX" type="AudioStreamPlayer" parent="GameAudio" unique_id=1040185641]
+stream = ExtResource("5_vn611")
+volume_db = -15.0
+
+[node name="GemButtonSFX" type="AudioStreamPlayer" parent="GameAudio" unique_id=1794557703]
+stream = ExtResource("6_5hrvv")
+volume_db = -15.0
+
 [connection signal="pressed" from="GameGUI/BaseGUI/GenerateCoinsButton" to="." method="_on_generate_coins_button_pressed"]
 [connection signal="pressed" from="GameGUI/BaseGUI/GenerateGemsButton" to="." method="_on_generate_gems_button_pressed"]
 [connection signal="timeout" from="GameTimers/ManaGenerationTimer" to="." method="_on_mana_generation_timer_timeout"]
+[connection signal="timeout" from="GameTimers/BaseResourceTickSpeed" to="." method="_on_base_resource_tick_speed_timeout"]

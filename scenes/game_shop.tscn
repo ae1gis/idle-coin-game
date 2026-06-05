@@ -1,0 +1,164 @@
+[gd_scene format=3 uid="uid://7wwkl7716y0h"]
+
+[ext_resource type="Script" uid="uid://bbq5bhul7eimv" path="res://scripts/shop_gui_manager.gd" id="1_lre78"]
+[ext_resource type="Script" uid="uid://2xemc85ng2uc" path="res://scripts/shop_logic.gd" id="1_pt8xj"]
+[ext_resource type="FontFile" uid="uid://dyr6wuvktby3v" path="res://graphics/fonts/Nintendo-DS-BIOS.ttf" id="1_ywhl0"]
+[ext_resource type="Resource" uid="uid://dwgx45p88tlp3" path="res://global_game_data.tres" id="2_lre78"]
+
+[node name="Control" type="Control" unique_id=533479704]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_pt8xj")
+data = ExtResource("2_lre78")
+
+[node name="BaseGUI" type="CanvasLayer" parent="." unique_id=98005921]
+script = ExtResource("1_lre78")
+data = ExtResource("2_lre78")
+
+[node name="ColorRect" type="ColorRect" parent="BaseGUI" unique_id=1785830641]
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -574.0
+grow_horizontal = 0
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="WizardyShopOwnedText" type="Label" parent="BaseGUI" unique_id=343184579]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -551.0
+offset_top = 50.0
+offset_right = -340.0
+offset_bottom = 85.0
+grow_horizontal = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_ywhl0")
+theme_override_font_sizes/font_size = 30
+text = "Amount Owned ->"
+metadata/_edit_use_anchors_ = true
+
+[node name="GemMineOwnedText" type="Label" parent="BaseGUI" unique_id=1553992273]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -551.0
+offset_top = 130.0
+offset_right = -340.0
+offset_bottom = 165.0
+grow_horizontal = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_ywhl0")
+theme_override_font_sizes/font_size = 30
+text = "Amount Owned ->"
+metadata/_edit_use_anchors_ = true
+
+[node name="ManaCatcherOwnedText" type="Label" parent="BaseGUI" unique_id=764643428]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -551.0
+offset_top = 210.0
+offset_right = -340.0
+offset_bottom = 245.0
+grow_horizontal = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_ywhl0")
+theme_override_font_sizes/font_size = 30
+text = "Amount Owned ->"
+metadata/_edit_use_anchors_ = true
+
+[node name="ManaCatcherText" type="Label" parent="BaseGUI" unique_id=1725609912]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -551.0
+offset_top = 180.0
+offset_right = -340.0
+offset_bottom = 215.0
+grow_horizontal = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_ywhl0")
+theme_override_font_sizes/font_size = 40
+text = "Mana Catcher ->"
+metadata/_edit_use_anchors_ = true
+
+[node name="GemMineText" type="Label" parent="BaseGUI" unique_id=1850072176]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -551.0
+offset_top = 100.0
+offset_right = -340.0
+offset_bottom = 135.0
+grow_horizontal = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_ywhl0")
+theme_override_font_sizes/font_size = 40
+text = "Gem Mine ->"
+metadata/_edit_use_anchors_ = true
+
+[node name="WizardryShopText" type="Label" parent="BaseGUI" unique_id=1126476012]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -551.0
+offset_top = 20.0
+offset_right = -340.0
+offset_bottom = 55.0
+grow_horizontal = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_ywhl0")
+theme_override_font_sizes/font_size = 40
+text = "Wizardry Shop ->"
+metadata/_edit_use_anchors_ = true
+
+[node name="WizardryShopButton" type="Button" parent="BaseGUI" unique_id=1242670878]
+anchors_preset = -1
+anchor_top = 0.0077160494
+anchor_right = 0.1015625
+anchor_bottom = 0.055555556
+offset_left = 816.0
+offset_top = 25.0
+offset_right = 839.0
+offset_bottom = 33.0
+theme_override_fonts/font = ExtResource("1_ywhl0")
+theme_override_font_sizes/font_size = 40
+text = "Purchase +1 -> x Gold"
+metadata/_edit_use_anchors_ = true
+
+[node name="GemMineButton" type="Button" parent="BaseGUI" unique_id=939226737]
+anchors_preset = -1
+anchor_top = 0.0077160494
+anchor_right = 0.1015625
+anchor_bottom = 0.055555556
+offset_left = 816.0
+offset_top = 105.0
+offset_right = 839.0
+offset_bottom = 113.0
+theme_override_fonts/font = ExtResource("1_ywhl0")
+theme_override_font_sizes/font_size = 40
+text = "Purchase +1 -> x Gold"
+metadata/_edit_use_anchors_ = true
+
+[node name="ManaCatcherButton" type="Button" parent="BaseGUI" unique_id=367532638]
+anchors_preset = -1
+anchor_top = 0.0077160494
+anchor_right = 0.1015625
+anchor_bottom = 0.055555556
+offset_left = 816.0
+offset_top = 185.0
+offset_right = 839.0
+offset_bottom = 193.0
+theme_override_fonts/font = ExtResource("1_ywhl0")
+theme_override_font_sizes/font_size = 40
+text = "Purchase +1 -> x Gems"
+metadata/_edit_use_anchors_ = true
+
+[connection signal="pressed" from="BaseGUI/WizardryShopButton" to="." method="_on_wizardry_shop_button_pressed"]
+[connection signal="pressed" from="BaseGUI/GemMineButton" to="." method="_on_gem_mine_button_pressed"]
+[connection signal="pressed" from="BaseGUI/ManaCatcherButton" to="." method="_on_mana_catcher_button_pressed"]
