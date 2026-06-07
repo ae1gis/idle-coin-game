@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://bbq5bhul7eimv" path="res://scripts/shop_gui_manager.gd" id="1_lre78"]
 [ext_resource type="Script" uid="uid://2xemc85ng2uc" path="res://scripts/shop_logic.gd" id="1_pt8xj"]
 [ext_resource type="FontFile" uid="uid://dyr6wuvktby3v" path="res://graphics/fonts/Nintendo-DS-BIOS.ttf" id="1_ywhl0"]
-[ext_resource type="Resource" uid="uid://dwgx45p88tlp3" path="res://global_game_data.tres" id="2_lre78"]
+[ext_resource type="Resource" uid="uid://dkyo6pt7n1ptk" path="res://game_data.tres" id="2_o7mqk"]
 
 [node name="Control" type="Control" unique_id=533479704]
 layout_mode = 3
@@ -11,11 +11,11 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("1_pt8xj")
-data = ExtResource("2_lre78")
+data = ExtResource("2_o7mqk")
 
 [node name="BaseGUI" type="CanvasLayer" parent="." unique_id=98005921]
 script = ExtResource("1_lre78")
-data = ExtResource("2_lre78")
+data = ExtResource("2_o7mqk")
 
 [node name="ColorRect" type="ColorRect" parent="BaseGUI" unique_id=1785830641]
 anchors_preset = 11

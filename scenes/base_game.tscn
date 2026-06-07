@@ -2,7 +2,7 @@
 
 [ext_resource type="FontFile" uid="uid://dyr6wuvktby3v" path="res://graphics/fonts/Nintendo-DS-BIOS.ttf" id="1_6ic67"]
 [ext_resource type="Script" uid="uid://cj4vhewcib4qr" path="res://scripts/core_logic.gd" id="1_opqod"]
-[ext_resource type="Resource" uid="uid://dwgx45p88tlp3" path="res://global_game_data.tres" id="2_0i5j1"]
+[ext_resource type="Resource" uid="uid://dkyo6pt7n1ptk" path="res://game_data.tres" id="2_5hrvv"]
 [ext_resource type="Script" uid="uid://d3oo3dftc4ww7" path="res://scripts/gui_manager.gd" id="2_iminf"]
 [ext_resource type="PackedScene" uid="uid://7wwkl7716y0h" path="res://scenes/game_shop.tscn" id="5_5hrvv"]
 [ext_resource type="AudioStream" uid="uid://da5m5w0msnnld" path="res://audio/driken5482-retro-coin-4-236671.mp3" id="5_vn611"]
@@ -10,7 +10,7 @@
 
 [node name="BaseGame" type="Node2D" unique_id=1155909837 node_paths=PackedStringArray("mana_timer")]
 script = ExtResource("1_opqod")
-data = ExtResource("2_0i5j1")
+data = ExtResource("2_5hrvv")
 mana_timer = NodePath("GameTimers/ManaGenerationTimer")
 
 [node name="GameGUI" type="Control" parent="." unique_id=914802850]
@@ -19,7 +19,7 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("2_iminf")
-data = ExtResource("2_0i5j1")
+data = ExtResource("2_5hrvv")
 
 [node name="BaseGUI" type="CanvasLayer" parent="GameGUI" unique_id=395032163]
 

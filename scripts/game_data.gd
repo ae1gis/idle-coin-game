@@ -34,21 +34,24 @@ signal mana_rate_change(new_value: float)
 		"resource_target": "coins",
 		"resource_increase": 5,
 		"cost_target": "coins",
-		"resource_cost": 50
+		"resource_cost": 50,
+		"cost_multiplier": 1.18
 	},
 	"gem_mine": {
 		"amount_owned": 0,
 		"resource_target": "gems",
 		"resource_increase": 0.1,
 		"cost_target": "coins",
-		"resource_cost": 150
+		"resource_cost": 150,
+		"cost_multiplier": 1.18
 	},
 	"mana_catcher": {
 		"amount_owned": 0,
 		"resource_target": "mana_rate",
 		"resource_increase": 0.05,
 		"cost_target": "gems",
-		"resource_cost": 2
+		"resource_cost": 2.0,
+		"cost_multiplier": 1.18
 	}
 }:
 	set(value):
